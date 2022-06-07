@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = "com/weby/step_definitions",
        // publish=true,
         dryRun = false,
-        tags = "@test1"
+        tags = "@TEST_TS-8374"
 )
 public class CukesRunner {
 }
