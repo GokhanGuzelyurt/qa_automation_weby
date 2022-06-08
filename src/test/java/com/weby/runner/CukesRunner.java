@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/weby/step_definitions",
        // publish=true,
-        dryRun = false,
-        tags = "@TEST_TS-8374"
+        dryRun = true,
+        tags = "@OrderForm"
 )
 public class CukesRunner {
 }

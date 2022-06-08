@@ -41,6 +41,7 @@ public class OrderStepDef {
 
         for (int i=0;i<orderType.size();i++){
             orderPage.orderTypeList.get(i).click();
+            BrowserUtils.waitForVisibility(orderPage.orderStatus.get(i),10);
             List<String> orderStatus= BrowserUtils.getElementsText(orderPage.orderStatus);
             for (int j = 0; j < orderStatus.size(); j++) {
                 Assert.assertEquals(orderType.get(i),orderStatus.get(j));

@@ -11,15 +11,24 @@ public class OrderPage extends BasePage{
 
     @FindBy(className = "PageHeader_title")
     public WebElement orderPageHeader;
-
+    @FindBy(id= "downshift-1-toggle-button")
+    public WebElement orderTypeDropDown;
     @FindBy(css = "[role='option']")
     public List<WebElement> orderTypeList;
 
-    @FindBy(id= "downshift-1-toggle-button")
-    public WebElement orderTypeDropDown;
-
     @FindBy(xpath= "//tbody//td[8]")
     public List<WebElement> orderStatus;
+
+    @FindBy(css = "[class*='newButton']")
+    public WebElement newOrderButton;
+
+    @FindBy(xpath = "//th[1]")
+    public WebElement id;
+
+    @FindBy(xpath = "//tr/td[2]")
+    public WebElement name;
+
+
 
 
 
