@@ -32,7 +32,7 @@ public class OrderStepDef {
 
     @When("user click order type dropdown")
     public void user_click_order_type_dropdown() {
-        orderPage.orderTypeDropDown.click();
+//        orderPage.orderTypeDropDown.click();
 
     }
 
@@ -40,8 +40,9 @@ public class OrderStepDef {
     public void userShouldSeeTheListAccordingToTheSelectedOrderType(List<String> orderType) {
 
         for (int i=0;i<orderType.size();i++){
+            orderPage.orderTypeDropDown.click();
             orderPage.orderTypeList.get(i).click();
-            BrowserUtils.waitForVisibility(orderPage.orderStatus.get(i),10);
+            BrowserUtils.waitFor(2);
             List<String> orderStatus= BrowserUtils.getElementsText(orderPage.orderStatus);
             for (int j = 0; j < orderStatus.size(); j++) {
                 Assert.assertEquals(orderType.get(i),orderStatus.get(j));

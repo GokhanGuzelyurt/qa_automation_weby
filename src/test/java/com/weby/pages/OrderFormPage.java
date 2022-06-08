@@ -32,7 +32,19 @@ public class OrderFormPage extends BasePage{
     public WebElement saveButton;
 
     @FindBy(css = "[class*='PageTabs_anchor']")
-    public List<WebElement> notesArea;
+    public List<WebElement> notesTitle;
+
+    @FindBy(className = "NotesField_content")
+    public WebElement notesArea;
+
+    @FindBy(xpath = " (//h1)[3]")
+    public WebElement messageText;
+
+
+
+
+
+
 
 
 
