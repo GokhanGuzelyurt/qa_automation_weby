@@ -41,16 +41,6 @@ public class OrderFormPage extends BasePage{
     public WebElement messageText;
 
 
-
-
-
-
-
-
-
-
-
-
     public WebElement getElement(String placeHolderName){
 
         return Driver.get().findElement(By.cssSelector("[placeholder='"+placeHolderName+"'"));

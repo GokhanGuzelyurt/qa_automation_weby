@@ -27,8 +27,10 @@ public class OrderPage extends BasePage{
     @FindBy(xpath = "//td[11]")
     public WebElement orderDetailsButton;
 
+    @FindBy(xpath = "//td[2]")
+    public WebElement orderName;
     @FindBy(className= "ContextMenu_item")
-    public WebElement editButton;
+    public List<WebElement> editButton;
 
 
 

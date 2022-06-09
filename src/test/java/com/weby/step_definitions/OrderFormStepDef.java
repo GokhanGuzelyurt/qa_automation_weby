@@ -11,6 +11,8 @@ public class OrderFormStepDef {
 
     OrderPage orderPage=new OrderPage();
     OrderFormPage orderFormPage=new OrderFormPage();
+
+    String orderName="";
     @When("user click New Order button")
     public void user_click_new_order_button() {
        orderPage.newOrderButton.click();
@@ -87,16 +89,28 @@ public class OrderFormStepDef {
     @When("user click edit button")
     public void user_click_edit_button() {
         orderPage.orderDetailsButton.click();
-        orderPage.editButton.click();
+        orderPage.editButton.get(0).click();
     }
     @When("user click Cancel button")
     public void user_click_cancel_button() {
-
+        BrowserUtils.waitFor(1);
         orderFormPage.cancelButton.click();
     }
     @Then("user see {string} messages")
     public void user_see_messages(String message) {
 
         assertEquals(message,orderFormPage.messageText.getText());
+    }
+
+    @When("use click Duplicate button")
+    public void use_click_duplicate_button() {
+
+        orderName=orderPage.orderName.getText();
+        orderPage.orderDetailsButton.click();
+        orderPage.editButton.get(1).click();
+    }
+    @Then("user see same order form")
+    public void user_see_same_order_form() {
+       BrowserUtils.waitFor(4);assertEquals(orderName,orderFormPage.getElement("Insert order name").getText());
     }
 }

@@ -48,11 +48,9 @@ public class Driver {
                     DevTools devTools = driver.getDevTools(); ;
                     devTools.createSession();
 
-
                     // Enable the Network domain of devtools
                     devTools.send(Network.enable(Optional.of(100000), Optional.of(100000), Optional.of(100000)));
                     String auth = username + ":" + password;
-
 
                     // Encoding the username and password using Base64 (java.util)
                     String encodeToString = Base64.getEncoder().encodeToString(auth.getBytes());
