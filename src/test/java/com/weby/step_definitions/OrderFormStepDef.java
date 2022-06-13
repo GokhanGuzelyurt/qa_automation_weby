@@ -93,6 +93,7 @@ public class OrderFormStepDef {
     }
     @When("user click Cancel button")
     public void user_click_cancel_button() {
+        orderFormPage.getElement("Insert order name").sendKeys("QA Changing name");
         BrowserUtils.waitFor(1);
         orderFormPage.cancelButton.click();
     }
@@ -111,6 +112,8 @@ public class OrderFormStepDef {
     }
     @Then("user see same order form")
     public void user_see_same_order_form() {
-       BrowserUtils.waitFor(4);assertEquals(orderName,orderFormPage.getElement("Insert order name").getText());
+       BrowserUtils.waitFor(2);
+       assertEquals(orderName,orderFormPage.getElement("Insert order name").getAttribute("value"));
+
     }
 }
